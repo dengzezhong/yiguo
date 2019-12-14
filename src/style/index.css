@@ -101,15 +101,10 @@ header > .wrapper > div > ul > li > i {
   display: inline-block;
 }
 
-header > .wrapper > div > ul:nth-of-type(1) {
-  position: absolute;
-  top: 23%;
-  left: 44%;
-}
-
 header > .wrapper > div > ul:nth-of-type(1) > li {
-  padding: 0;
+  padding: 0px;
   margin: 0 8px;
+  line-height: 28px;
 }
 
 header > .wrapper > div > ul:nth-of-type(1) > li > a {
@@ -120,7 +115,15 @@ header > .wrapper > div > ul:nth-of-type(1) > li > a:hover {
   color: #25a54c;
 }
 
+header > .wrapper > div > ul:nth-of-type(2) {
+  position: relative;
+}
+
 header > .wrapper > div > ul:nth-of-type(2) > li:hover {
+  z-index: 99;
+  padding: 6px 19px;
+  border-left: 1px solid #888;
+  border-right: 1px solid #888;
   background: #fff;
 }
 
@@ -133,8 +136,38 @@ header > .wrapper > div > ul:nth-of-type(2) > li > i {
   top: 0px;
 }
 
+header > .wrapper > div > ul:nth-of-type(2) > li .me {
+  display: none;
+  z-index: 1;
+  width: 100%;
+  line-height: 24px;
+  padding-left: 12px;
+  position: absolute;
+  top: 30px;
+  left: -1px;
+  background: #fff;
+  border: 1px solid #888;
+  color: #636161;
+  font-weight: 100;
+}
+
+header > .wrapper > div > ul:nth-of-type(2) > li .me > li:hover {
+  font-weight: 900;
+  color: #116d2c;
+}
+
+header > .wrapper > div > ul:nth-of-type(2) > li:hover {
+  z-index: 999;
+}
+
+header > .wrapper > div > ul:nth-of-type(2) > li:hover .me {
+  z-index: -999;
+  display: inline-block;
+}
+
 header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(1) {
   position: relative;
+  z-index: 99;
 }
 
 header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(1) > i:nth-of-type(1) {
@@ -146,6 +179,7 @@ header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(1) > i:nth-of-type(
 
 header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(2) {
   position: relative;
+  z-index: 999;
 }
 
 header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(2) > i:nth-of-type(1) {
@@ -153,6 +187,15 @@ header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(2) > i:nth-of-type(
   position: absolute;
   top: 5px;
   left: 0;
+}
+
+header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(2) .me {
+  width: 126px;
+  padding: 12px;
+}
+
+header > .wrapper > div > ul:nth-of-type(2) > li:nth-of-type(2) .me img {
+  width: 126px;
 }
 
 header > .wrapper > div > ul:nth-of-type(3) > li {
@@ -328,7 +371,7 @@ header > .wrapper > div > ul:nth-of-type(3) > li:nth-of-type(4) > i {
   position: relative;
 }
 
-.banner > .wrapper > span {
+.banner > .wrapper > div > span {
   background: #116d2c;
   color: #fff;
   font-weight: 900;
@@ -340,11 +383,19 @@ header > .wrapper > div > ul:nth-of-type(3) > li:nth-of-type(4) > i {
   line-height: 42px;
 }
 
-.banner > .wrapper > ul {
-  opacity: .8;
+.banner > .wrapper > div:hover ul {
+  display: inline-block;
 }
 
-.banner > .wrapper > ul > li {
+.banner > .wrapper > div > ul {
+  opacity: .8;
+  display: none;
+  position: absolute;
+  top: 42px;
+  left: 0px;
+}
+
+.banner > .wrapper > div > ul > li {
   width: 120px;
   height: 2.6rem;
   padding: 0 24px;
@@ -355,7 +406,7 @@ header > .wrapper > div > ul:nth-of-type(3) > li:nth-of-type(4) > i {
   display: flex;
 }
 
-.banner > .wrapper > ul > li:hover {
+.banner > .wrapper > div > ul > li:hover {
   color: #116d2c;
   height: 39.6px;
   line-height: 39.6px;
@@ -366,20 +417,20 @@ header > .wrapper > div > ul:nth-of-type(3) > li:nth-of-type(4) > i {
   border-right: none;
 }
 
-.banner > .wrapper > ul > li:hover i {
+.banner > .wrapper > div > ul > li:hover i {
   display: inline-block;
 }
 
-.banner > .wrapper > ul > li:hover .shop-title {
+.banner > .wrapper > div > ul > li:hover .shop-title {
   display: inline-block;
 }
 
-.banner > .wrapper > ul i {
+.banner > .wrapper > div > ul i {
   display: none;
   margin-left: 12px;
 }
 
-.banner > .wrapper > ul span {
+.banner > .wrapper > div > ul span {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -388,43 +439,43 @@ header > .wrapper > div > ul:nth-of-type(3) > li:nth-of-type(4) > i {
   align-self: center;
 }
 
-.banner > .wrapper > ul li:nth-of-type(2) span {
+.banner > .wrapper > div > ul li:nth-of-type(2) span {
   background-position: -24px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(3) span {
+.banner > .wrapper > div > ul li:nth-of-type(3) span {
   background-position: -48px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(4) span {
+.banner > .wrapper > div > ul li:nth-of-type(4) span {
   background-position: -72px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(5) span {
+.banner > .wrapper > div > ul li:nth-of-type(5) span {
   background-position: -96px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(6) span {
+.banner > .wrapper > div > ul li:nth-of-type(6) span {
   background-position: -120px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(7) span {
+.banner > .wrapper > div > ul li:nth-of-type(7) span {
   background-position: -144px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(8) span {
+.banner > .wrapper > div > ul li:nth-of-type(8) span {
   background-position: -168px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(9) span {
+.banner > .wrapper > div > ul li:nth-of-type(9) span {
   background-position: -192px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(10) span {
+.banner > .wrapper > div > ul li:nth-of-type(10) span {
   background-position: -216px 0px;
 }
 
-.banner > .wrapper > ul li:nth-of-type(11) span {
+.banner > .wrapper > div > ul li:nth-of-type(11) span {
   background-position: -240px 0px;
 }
 
@@ -434,7 +485,7 @@ header > .wrapper > div > ul:nth-of-type(3) > li:nth-of-type(4) > i {
   background: #fff;
   border: 1px solid #888;
   position: absolute;
-  top: 0;
+  top: -42px;
   left: 168px;
   z-index: -99;
   color: #000;
@@ -683,4 +734,81 @@ main .main-text .main-shop img:nth-of-type(2) {
 
 .footer-nav .footer-out p > a {
   color: #999;
+}
+
+/* 固定导航楼梯 */
+.nav-fixed-left {
+  position: fixed;
+  top: 40%;
+  left: 24px;
+}
+
+.nav-fixed-left > div {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-fixed-left > div > span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.nav-fixed-left > div > span:first-of-type {
+  width: 24px;
+  background: url(../img/nav-icon.png) no-repeat 0px 6px;
+}
+
+.nav-fixed-left > div > span:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #116d2c;
+  text-align: center;
+  display: none;
+}
+
+.nav-fixed-left > div > span:first-of-type:hover {
+  display: none;
+}
+
+.nav-fixed-left > div:nth-of-type(2) span:first-of-type {
+  background: url(../img/nav-icon.png) no-repeat -24px 6px;
+}
+
+.nav-fixed-left > div:nth-of-type(3) span:first-of-type {
+  background: url(../img/nav-icon.png) no-repeat -48px 6px;
+}
+
+.nav-fixed-right {
+  position: fixed;
+  top: 40%;
+  right: 12px;
+}
+
+.nav-fixed-right div {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+.nav-fixed-right .box1 {
+  background: url(../img/sidebar.png) no-repeat -4px 0px;
+}
+
+.nav-fixed-right .box2 {
+  background: url(../img/sidebar.png) no-repeat -4px -48px;
+}
+
+.nav-fixed-right .box1:hover {
+  background: url(../img/sidebar.png) no-repeat -60px 0px;
+}
+
+.nav-fixed-right .box2:hover {
+  background: url(../img/sidebar.png) no-repeat -60px -48px;
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
     margin: 0;
     padding: 0;
@@ -89,12 +90,10 @@ header {
                 }
             }
             >ul:nth-of-type(1) {
-                position: absolute;
-                top: 23%;
-                left: 44%;
                 >li {
-                    padding: 0;
+                    padding: 0px;
                     margin: 0 8px;
+                    line-height: 28px;
                     >a {
                         color: #000;
                         &:hover {
@@ -104,9 +103,14 @@ header {
                 }
             }
             >ul:nth-of-type(2) {
+                position: relative;
                 >li {
                     // padding-bottom: 6px;
                     &:hover {
+                        z-index: 99;
+                        padding: 6px 19px;
+                        border-left: 1px solid #888;
+                        border-right: 1px solid #888;
                         background: #fff;
                         >i:nth-of-type(2) {
                             background: url(../img/header-img.png) no-repeat -8px 12px;
@@ -116,9 +120,35 @@ header {
                         position: absolute;
                         top: 0px;
                     }
+                    .me {
+                        display: none;
+                        z-index: 1;
+                        width: 100%;
+                        line-height: 24px;
+                        padding-left: 12px;
+                        position: absolute;
+                        top: 30px;
+                        left: -1px;
+                        background: #fff;
+                        border: 1px solid #888;
+                        color: rgb(99, 97, 97);
+                        font-weight: 100;
+                        >li:hover {
+                            font-weight: 900;
+                            color: $main-color;
+                        }
+                    }
+                    &:hover {
+                        z-index: 999;
+                        .me {
+                            z-index: -999;
+                            display: inline-block;
+                        }
+                    }
                 }
                 >li:nth-of-type(1) {
                     position: relative;
+                    z-index: 99;
                     >i:nth-of-type(1) {
                         background: url(../img/header-img.png) no-repeat -40px top;
                         position: absolute;
@@ -128,11 +158,19 @@ header {
                 }
                 >li:nth-of-type(2) {
                     position: relative;
+                    z-index: 999;
                     >i:nth-of-type(1) {
                         background: url(../img/header-img.png) no-repeat -62px top;
                         position: absolute;
                         top: 5px;
                         left: 0;
+                    }
+                    .me {
+                        width: 126px;
+                        padding: 12px;
+                        img {
+                            width: 126px;
+                        }
                     }
                 }
             }
@@ -307,86 +345,97 @@ header {
     }
     >.wrapper {
         position: relative;
-        >span {
-            background: $main-color;
-            color: #fff;
-            font-weight: 900;
-            padding: 0 24px;
-            width: 120px;
-            height: 42px;
-            display: inline-block;
-            text-align: center;
-            line-height: 42px;
-        }
-        >ul {
-            opacity: .8;
-            >li {
-                width: 120px;
-                height: 2.6rem;
+        >div {
+            >span {
+                background: $main-color;
+                color: #fff;
+                font-weight: 900;
                 padding: 0 24px;
-                line-height: 2.6rem;
-                text-align: center;
-                font-size: 14px;
-                background: #fff;
-                display: flex;
-            }
-            >li:hover {
-                color: $main-color;
-                height: (2.6*16-2)+px;
-                line-height: (2.6*16-2)+px;
-                padding-left: 32px;
-                padding-right: 16px;
-                background: #fff;
-                border: 1px solid #888;
-                border-right: none;
-                i {
-                    display: inline-block;
-                }
-                .shop-title {
-                    display: inline-block;
-                }
-            }
-            i {
-                display: none;
-                margin-left: 12px;
-            }
-            span {
+                width: 120px;
+                height: 42px;
                 display: inline-block;
-                width: 24px;
-                height: 24px;
-                margin-right: 12px;
-                background: url(../img/nav-icon.png) no-repeat 0px 0px;
-                align-self: center;
+                text-align: center;
+                line-height: 42px;
             }
-            li:nth-of-type(2) span {
-                background-position: -24px 0px;
+            &:hover {
+                ul {
+                    display: inline-block;
+                }
             }
-            li:nth-of-type(3) span {
-                background-position: -48px 0px;
-            }
-            li:nth-of-type(4) span {
-                background-position: -72px 0px;
-            }
-            li:nth-of-type(5) span {
-                background-position: -96px 0px;
-            }
-            li:nth-of-type(6) span {
-                background-position: -120px 0px;
-            }
-            li:nth-of-type(7) span {
-                background-position: -144px 0px;
-            }
-            li:nth-of-type(8) span {
-                background-position: -168px 0px;
-            }
-            li:nth-of-type(9) span {
-                background-position: -192px 0px;
-            }
-            li:nth-of-type(10) span {
-                background-position: -216px 0px;
-            }
-            li:nth-of-type(11) span {
-                background-position: -240px 0px;
+            >ul {
+                opacity: .8;
+                display: none;
+                position: absolute;
+                top: 42px;
+                left: 0px;
+                >li {
+                    width: 120px;
+                    height: 2.6rem;
+                    padding: 0 24px;
+                    line-height: 2.6rem;
+                    text-align: center;
+                    font-size: 14px;
+                    background: #fff;
+                    display: flex;
+                }
+                >li:hover {
+                    color: $main-color;
+                    height: (2.6*16-2)+px;
+                    line-height: (2.6*16-2)+px;
+                    padding-left: 32px;
+                    padding-right: 16px;
+                    background: #fff;
+                    border: 1px solid #888;
+                    border-right: none;
+                    i {
+                        display: inline-block;
+                    }
+                    .shop-title {
+                        display: inline-block;
+                    }
+                }
+                i {
+                    display: none;
+                    margin-left: 12px;
+                }
+                span {
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 12px;
+                    background: url(../img/nav-icon.png) no-repeat 0px 0px;
+                    align-self: center;
+                }
+                li:nth-of-type(2) span {
+                    background-position: -24px 0px;
+                }
+                li:nth-of-type(3) span {
+                    background-position: -48px 0px;
+                }
+                li:nth-of-type(4) span {
+                    background-position: -72px 0px;
+                }
+                li:nth-of-type(5) span {
+                    background-position: -96px 0px;
+                }
+                li:nth-of-type(6) span {
+                    background-position: -120px 0px;
+                }
+                li:nth-of-type(7) span {
+                    background-position: -144px 0px;
+                }
+                li:nth-of-type(8) span {
+                    background-position: -168px 0px;
+                }
+                li:nth-of-type(9) span {
+                    background-position: -192px 0px;
+                }
+                li:nth-of-type(10) span {
+                    background-position: -216px 0px;
+                }
+                li:nth-of-type(11) span {
+                    background-position: -240px 0px;
+                }
             }
         }
     }
@@ -396,7 +445,7 @@ header {
         background: #fff;
         border: 1px solid #888;
         position: absolute;
-        top: 0;
+        top: -42px;
         left: 168px;
         z-index: -99;
         color: #000;
@@ -613,5 +662,73 @@ main {
         p>a {
             color: #999;
         }
+    }
+}
+
+
+/* 固定导航楼梯 */
+
+.nav-fixed-left {
+    position: fixed;
+    top: 40%;
+    left: 24px;
+    >div {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        // cursor: pointer;
+        >span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            font-weight: 900;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        >span:first-of-type {
+            width: 24px;
+            background: url(../img/nav-icon.png) no-repeat 0px 6px;
+        }
+        >span:nth-of-type(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $main-color;
+            text-align: center;
+            display: none;
+        }
+        >span:first-of-type:hover {
+            display: none;
+        }
+    }
+    >div:nth-of-type(2) span:first-of-type {
+        background: url(../img/nav-icon.png) no-repeat -24px 6px;
+    }
+    >div:nth-of-type(3) span:first-of-type {
+        background: url(../img/nav-icon.png) no-repeat -48px 6px;
+    }
+}
+
+.nav-fixed-right {
+    position: fixed;
+    top: 40%;
+    right: 12px;
+    div {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 12px;
+    }
+    .box1 {
+        background: url(../img/sidebar.png) no-repeat -4px 0px;
+    }
+    .box2 {
+        background: url(../img/sidebar.png) no-repeat -4px -48px;
+    }
+    .box1:hover {
+        background: url(../img/sidebar.png) no-repeat -60px 0px;
+    }
+    .box2:hover {
+        background: url(../img/sidebar.png) no-repeat -60px -48px;
     }
 }
