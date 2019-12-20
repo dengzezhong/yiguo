@@ -277,6 +277,14 @@ header {
         display: flex;
         font-size: 18px;
         position: relative;
+        >a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         >span:first-of-type {
             // position: absolute;
             align-self: center;
@@ -529,12 +537,17 @@ main {
         }
         >img {
             float: left;
+            cursor: pointer;
         }
         .main-shop {
             float: right;
             img {
                 border: 1px solid #888;
                 float: left;
+                cursor: pointer;
+                &:hover {
+                    box-shadow: 1px 1px 6px 1px #888;
+                }
             }
             div:nth-of-type(1)>img {
                 border-bottom: none;

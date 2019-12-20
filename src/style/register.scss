@@ -1,0 +1,190 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 主题色 */
+
+$main-color:rgb(17, 109, 44);
+
+/* header start */
+
+.header {
+    background: rgb(184, 182, 182);
+    padding: 12px 0;
+    .wrapper {
+        display: flex;
+        >p {
+            font-size: 32px;
+            color: $main-color;
+            margin-left: 68px;
+            vertical-align: middle;
+        }
+    }
+}
+
+// 注册 start
+.enroll {
+    >fieldset {
+        width: 520px;
+        // height: 600px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px 3px#666;
+        text-align: center;
+        >legend {
+            width: 140px;
+            height: 30px;
+            // border: 1px solid #000;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px #ccc;
+            text-shadow: 1px 1px 3px #666;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 900;
+        }
+        >p {
+            margin: 32px auto;
+            >input {
+                width: 360px;
+                margin-left: 12px;
+                border-radius: 6px;
+                box-shadow: 1px 1px 3px #333;
+                outline: none;
+                padding: 12px;
+            }
+            &:nth-of-type(4)>input,
+            &:nth-of-type(5)>input {
+                width: 200px;
+            }
+            &:nth-of-type(4)>span {
+                margin-left: 6px;
+                >img {
+                    width: 100px;
+                    height: 48px;
+                }
+                &:nth-of-type(2) {
+                    display: inline-block;
+                    cursor: pointer;
+                }
+            }
+            &:nth-of-type(5)>span {
+                width: 132px;
+                border: 1px solid #666;
+                display: inline-block;
+                line-height: 46px;
+                border-radius: 3px;
+                cursor: pointer;
+                &:hover {
+                    border-color: red;
+                    color: #f00;
+                }
+            }
+            >label {
+                font-weight: 900;
+                text-align: left;
+            }
+        }
+        >input {
+            margin: 30px 0;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px #333;
+            outline: none;
+        }
+        >input:nth-of-type(1) {
+            // margin-left: 150px;
+            padding: 10px 160px;
+            margin: 0;
+        }
+        >a {
+            color: rgb(243, 28, 28);
+            font-size: 16px;
+            padding: 12px;
+            margin: 12px;
+            display: inline-block;
+            text-decoration: none;
+        }
+    }
+}
+
+
+/* footer start*/
+
+.footer-nav {
+    background: rgb(238, 236, 236);
+    padding: 58px 0;
+    margin-top: 120px;
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-nav-list {
+        position: relative;
+        >span {
+            padding-left: 36px;
+            background: url(../img/footer_icon.png) no-repeat 0 0;
+        }
+        ul {
+            // position: absolute;
+            // top: 28px;
+            // left: 12px;
+            font-size: 12px;
+            margin-top: 12px;
+            padding-left: 28px;
+            border-left: 1px dotted #888;
+            li {
+                line-height: 24px;
+                cursor: pointer;
+            }
+            li:hover {
+                color: $main-color;
+                text-decoration: underline;
+            }
+        }
+    }
+    .footer-nav-list:nth-of-type(2)>span {
+        background-position-y: -24px;
+    }
+    .footer-nav-list:nth-of-type(3)>span {
+        background-position-y: -48px;
+    }
+    .footer-nav-list:nth-of-type(4)>span {
+        background-position-y: -70px;
+    }
+    .footer-nav-list:nth-of-type(5)>span {
+        background-position-y: -96px;
+    }
+    .footer-out {
+        text-align: center;
+        p {
+            color: #999;
+            font-size: 12px;
+            line-height: 32px;
+        }
+        p:nth-of-type(1) {
+            color: $main-color;
+            padding: 42px 0;
+            font-size: 16px;
+        }
+        p>span:hover {
+            cursor: pointer;
+            color: $main-color;
+        }
+        p>img {
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        p>a {
+            color: #999;
+        }
+    }
+}
